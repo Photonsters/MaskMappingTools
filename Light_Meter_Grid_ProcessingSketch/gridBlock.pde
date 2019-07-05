@@ -42,7 +42,7 @@ class gridBlock {
         
         nxpos = i*(nw+nspc)+gxpos+nspc/2;
         nypos = j*(nh+nspc)+gypos+nspc/2;
-        nodes[i][j] = new gridNode(nw, nh, nxpos, nypos );
+        nodes[i][j] = new gridNode(nw, nh, nxpos, nypos, true );
         // println(nxpos, nypos, nxpos+nw, nypos+nh);
         
       }
@@ -51,6 +51,16 @@ class gridBlock {
  // Redraw grid nodes
  void update(){
    
+   // Label rows and columns
+     textSize(nh/3);
+     for( int col=0; col<nxn; col++){
+       text(nf(col+1), gxpos + 0.5*nw + col*(nw+nspc), 100);
+     }
+     for( int row=0; row<nyn; row++){
+       text(nf(row+1), 60, gypos + 0.5*nh + row*(nh+nspc));
+     }
+     
+   // Draw the nodes
      for (int i=0; i<nxn; i++) {
       for (int j=0; j<nyn; j++) {
         nodes[i][j].update();

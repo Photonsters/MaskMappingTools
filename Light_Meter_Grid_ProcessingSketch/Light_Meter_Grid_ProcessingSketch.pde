@@ -2,24 +2,20 @@
 // It uses a simples serial read from any capable device configured to send a serial print trough it's com. 
 
 // TODO:
-// Add reset button
 // Add on the fly node nr configuration(preset as photon grid)
 // Add Photonsters logo and branding
-// Add export to CSV capability
 // Add import CSV capability (Not important)
 
 
-String serialRead = "no data";
-int marginx = 200;
-int marginy = marginx;
-int gxpos = marginx/2;
-int gypos = marginy/2;
-int xnodesnr = 10;
+String serialRead = "No Data";
+int baudRate = 57600;
+int marginx = 100;
+int marginy = 150;
+int gxpos = 75;
+int gypos = 125;
+int xnodesnr = 11;
 int ynodesnr = 6;
 int xynodespacing = 5;
-
-//gridNode gn0 = new gridNode(100,100,200,100,serialRead);
-//gridNode gn1 = new gridNode(100,100,310,100,serialRead);
 
 gridBlock gb1;
 gridNode btnrst;
@@ -28,8 +24,12 @@ gridNode btnsave;
 void setup(){
   
   clear();
-  size(1000, 800);
+  size(1100, 700);
   frameRate(30);
+  textSize(30);
+  fill( 255, 255, 255);
+  text("Waiting to communicate with Uno board...", marginx, height/2);
+  delay(1500);
   
   // Build com chooser interface
   comSetup(0,0);
@@ -40,17 +40,15 @@ void setup(){
   // Build grid
   gb1.build();
   
-  btnsave = new gridNode(100,50,101,0,"Save");
+  btnsave = new gridNode(100,50,101,0,"Save",false);
   btnsave.nRGB = color(60, 60, 60);
   btnsave.tnRGB = color(255, 255, 255);
   btnsave.onRGB = color(0, 116, 217);
   
-  btnrst = new gridNode(100,50,202,0,"Reset");
+  btnrst = new gridNode(100,50,202,0,"Reset",false);
   btnrst.nRGB = color(60, 60, 60);
   btnrst.tnRGB = color(255, 255, 255);
   btnrst.onRGB = color(0, 116, 217);
-  
-
 }
 
 void draw(){ 
@@ -63,29 +61,12 @@ void draw(){
   // Detect mouse over com interface
   comMouse();
   
-  //gn0.update();
-  //gn0.ntxt = trim(serialRead);
-  //gn1.update();
-  //gn1.ntxt = trim(serialRead);
-  
-  //gb1.nodes[0][0].update();
-  //gb1.nodes[0][1].update();
-  //gb1.nodes[1][0].update();
-  //gb1.nodes[1][1].update();
-  
   gb1.update();
   btnrst.update();
   btnsave.update();
 } 
 
 void mouseReleased(){
-  //gn0.onclick();
-  //gn1.onclick();
- 
-  //gb1.nodes[0][0].onclick();
-  //gb1.nodes[0][1].onclick();
-  //gb1.nodes[1][0].onclick();
-  //gb1.nodes[1][1].onclick();
   
   gb1.onclick();
   btnrst.onclick();

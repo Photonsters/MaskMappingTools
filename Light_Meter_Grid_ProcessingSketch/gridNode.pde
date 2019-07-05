@@ -10,36 +10,38 @@ class gridNode {
     int nyh;
     int nwh;
     int nhh;
+    boolean xy;
     boolean mouseOver;
     boolean nodeFrozen;
     String ntxt;                             // Normal text to display
     String ntxtFrozen;                       // Frozen text to display
     color nRGB = color(255,255,255);         // Normal color
-    color onRGB = color(125,125,255);        // Over Normal color 
-    color fRGB = color(125,125,125);         // Frozen color
-    color ofRGB = color(150,150,150);        // Over Frozen color
+    color onRGB = color(0,0,0);          // Over Normal color 
+    color fRGB = color(25,150,25);           // Frozen color
+    color ofRGB = color(225,25,25);              // Over Frozen color
     color tnRGB = color(125,125,125);        // Text Normal color
     color tonRGB = color(255,255,255);       // Text Over Normal color 
     color tfRGB = color(255,255,255);        // Text Frozen color
-    color tofRGB = color(255,255,255);       // Text Over Frozen color
-  
-  gridNode(int w, int h, int x, int y, String txt){
+    color tofRGB = color(0,0,0);       // Text Over Frozen color
+    
+  gridNode(int w, int h, int x, int y, String txt, boolean coords){
     
     nx = x;
     ny = y;
     nw = w;
     nh = h;
     ntxt = txt;
-    
+    xy = coords;
   }
   
-  gridNode(int w, int h, int x, int y){
+  gridNode(int w, int h, int x, int y, boolean coords){
     
     nx = x;
     ny = y;
     nw = w;
     nh = h;
     ntxt = "N/A";
+    xy = coords;
     
   }
   
@@ -104,9 +106,16 @@ class gridNode {
     
     // Draw text
     int tsz = nh/4;
-    textSize(tsz);
-
-    textAlign(CENTER, CENTER);
+    if( xy){
+      textAlign(LEFT, TOP);
+      fill(txtRGB);
+      textSize(tsz/1.5);
+      //String nodeID = "(" + nf(ny/(nh+xynodespacing)) + "," + nf(nx/(nw+xynodespacing)) + ")";
+      String nodeID = "(" + nf(ny/nh) + "," + nf(nx/nw) + ")";
+      text(nodeID, nx, ny, nw, nh);
+    }
+      textSize(tsz);
+      textAlign(CENTER, CENTER);
     if (!nodeFrozen){
       fill(txtRGB);
       text(ntxt, nx, ny, nw, nh);
