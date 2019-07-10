@@ -1,5 +1,5 @@
 # MaskMappingTools
-Simple Light Mapping sampler tool to create csv tables with light distribution for Photon and other CBD Printers
+Simple light lapping tool to measure light distribution data across your LCD and export as csv table.  Designed for Photon and other 5.5" CBD MSLA Printers
 
 A simple gridlock Processing sketch that reads via serial a LDR connected to a Arduino
 
@@ -8,4 +8,4 @@ A simple gridlock Processing sketch that reads via serial a LDR connected to a A
 ![image](https://user-images.githubusercontent.com/11083514/60633244-a90f0300-9e01-11e9-833f-33e856c5bd23.png)
 
 ---
-Download and print the companion Grid and sensor housing by @makermatrix on [thinguiverse > here <](https://www.thingiverse.com/thing:3728374/files) 
+Download and print the companion grid, sensor housing, and .photon files by @makermatrix on [thingiverse > here <](https://www.thingiverse.com/thing:3728374/files) 
