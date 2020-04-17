@@ -4,7 +4,8 @@ Simple Light Mapping tool to create csv tables with light distribution for Photo
 ---
 
 Download and print the companion Grid and sensor housing by @makermatrix on [thinguiverse > here <](https://www.thingiverse.com/thing:3728374/files) 
-Or the lasercut grid [> here <](Screen-LightSampler_photon-elfin_lasercut_200417.pdf)
+
+And/or the lasercut grid [> here <](Screen-LightSampler_photon-elfin_lasercut_200417.pdf)
 
 ---
 
