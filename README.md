@@ -2,8 +2,10 @@
 Simple Light Mapping tool to create csv tables with light distribution for Photon and other CBD Printers.  Processing sketch that reads via serial a LDR connected to a Arduino.  See the wiki tab at the top of this page for instructions on how to use this.
 
 ---
+
 Download and print the companion Grid and sensor housing by @makermatrix on [thinguiverse > here <](https://www.thingiverse.com/thing:3728374/files) 
-----
+
+---
 
 ![Sketch](https://user-images.githubusercontent.com/52144433/60999355-96745c80-a320-11e9-9521-eefb5a15f340.png)
 ![LDR2](https://user-images.githubusercontent.com/52144433/60999354-96745c80-a320-11e9-9202-ada9cce72bfc.jpg)
